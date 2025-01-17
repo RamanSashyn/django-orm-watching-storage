@@ -12,9 +12,9 @@ def passcard_info_view(request, passcode):
         {
             'entered_at': visit.get_entered_at_formatted(),
             'duration': visit.format_duration(),
-            'is_strange': visit.get_duration().total_seconds() > 3600,
+            'is_strange':  visit.is_visit_long(minutes=60),
         }
-        for visit in visits
+        for visit in visits if visit.is_visit_long(minutes=60)
     ]
 
     context = {
