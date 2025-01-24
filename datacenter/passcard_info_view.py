@@ -14,7 +14,7 @@ def passcard_info_view(request, passcode):
             'duration': visit.format_duration(),
             'is_strange':  visit.is_visit_long(minutes=60),
         }
-        for visit in visits if visit.is_visit_long(minutes=60)
+        for visit in visits
     ]
 
     context = {
