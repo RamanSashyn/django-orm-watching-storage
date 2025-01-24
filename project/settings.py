@@ -16,11 +16,11 @@ DATABASES = {
     }
 }
 
-SECRET_KEY = env.str('SECRET_KEY', 'REPLACE_ME')
+SECRET_KEY = env.str('SECRET_KEY')
 
 DEBUG = env.bool("DEBUG", default=True)
 
-ALLOWED_HOSTS = env.str('ALLOWED_HOSTS', '*').split(',')
+ALLOWED_HOSTS = env.str('ALLOWED_HOSTS').split(',')
 
 INSTALLED_APPS = ['datacenter']
 ROOT_URLCONF = 'project.urls'
